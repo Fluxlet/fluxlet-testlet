@@ -1,0 +1,38 @@
+{
+  "name": "fluxlet-testlet",
+  "version": "0.0.1",
+  "description": "Test library for Fluxlet",
+  "main": "src/testlet.js",
+  "dependencies": {
+    "extend": "^3.0.0",
+    "fluxlet": "^0.0.1",
+    "fluxlet-immutable": "^0.0.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "browserify": "^11.0.1",
+    "groc": "^0.8.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-browserify": "^4.3.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-cli": "^0.1.0",
+    "karma-jasmine": "^0.3.6",
+    "wallabify": "^0.0.9"
+  },
+  "scripts": {
+    "test": "karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.adaptavist.com:7999/crap/fluxlet-testlet.git"
+  },
+  "keywords": [
+    "fluxlet",
+    "testing"
+  ],
+  "author": "Mark Gibson <mgibson@adaptavist.com>",
+  "license": "MIT"
+}
