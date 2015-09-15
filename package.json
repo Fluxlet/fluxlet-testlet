@@ -12,18 +12,27 @@
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
     "browserify": "^11.0.1",
+    "chai": "^3.2.0",
     "groc": "^0.8.0",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.9",
     "karma-browserify": "^4.3.0",
     "karma-chrome-launcher": "^0.2.0",
-    "karma-firefox-launcher": "^0.1.6",
     "karma-cli": "^0.1.0",
+    "karma-firefox-launcher": "^0.1.6",
     "karma-jasmine": "^0.3.6",
+    "mocha": "^2.3.2",
+    "sinon": "^1.16.1",
+    "sinon-chai": "^2.8.0",
     "wallabify": "^0.0.9"
   },
   "scripts": {
     "test": "karma start --single-run"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   },
   "repository": {
     "type": "git",
