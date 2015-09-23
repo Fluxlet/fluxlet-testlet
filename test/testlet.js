@@ -1,7 +1,7 @@
 import chai, { expect } from 'chai'
 import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
-import { initTestlet, given, when, then, waitUntil, mockAction, spy, spyOn } from '../src/testlet'
+import { initTestlet, given, when, then, waitUntil, mockAction, spy, spyOn } from 'src/testlet'
 
 chai.use(sinonChai)
 

@@ -2,37 +2,39 @@
   "name": "fluxlet-testlet",
   "version": "0.0.1",
   "description": "Test library for Fluxlet",
-  "main": "src/testlet.js",
-  "dependencies": {
-    "extend": "^3.0.0",
-    "fluxlet": "^0.0.1",
-    "fluxlet-immutable": "^0.0.1"
-  },
+  "main": "src/testlet",
+  "dependencies": {},
   "devDependencies": {
     "babel": "^5.8.23",
-    "babelify": "^6.3.0",
-    "browserify": "^11.0.1",
-    "chai": "^3.2.0",
+    "glob": "^5.0.14",
     "groc": "^0.8.0",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.13.9",
-    "karma-browserify": "^4.3.0",
+    "jspm": "^0.16.8",
+    "karma": "^0.13.10",
     "karma-chrome-launcher": "^0.2.0",
     "karma-cli": "^0.1.0",
     "karma-firefox-launcher": "^0.1.6",
-    "karma-jasmine": "^0.3.6",
-    "mocha": "^2.3.2",
-    "sinon": "^1.16.1",
-    "sinon-chai": "^2.8.0",
-    "wallabify": "^0.0.9"
+    "karma-jspm": "^2.0.1",
+    "karma-mocha": "^0.2.0",
+    "mocha": "^2.3.2"
   },
   "scripts": {
+    "postinstall": "jspm install",
     "test": "karma start --single-run"
   },
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
+  "jspm": {
+    "format": "es6",
+    "directories": {
+      "lib": "src"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "chai": "npm:chai@^3.3.0",
+      "core-js": "npm:core-js@^1.1.4",
+      "sinon": "npm:sinon@^1.17.0",
+      "sinon-chai": "npm:sinon-chai@^2.8.0"
+    }
   },
   "repository": {
     "type": "git",

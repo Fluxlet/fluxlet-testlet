@@ -10,13 +10,16 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['browserify', 'jasmine'],
+        frameworks: ['jspm', 'mocha'],
 
+        jspm: {
+            // Edit this to your needs
+            loadFiles: ['src/*.js', 'test/*.js']
+            //serveFiles: ['src/*.js']
+        },
 
         // list of files / patterns to load in the browser
         files: [
-            'src/*.js',
-            'test/*.js'
         ],
 
         // list of files to exclude
@@ -26,14 +29,8 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'src/*.js': ['browserify'],
-            'test/*.js': ['browserify']
         },
 
-        browserify: {
-            debug: true,
-            transform: ['babelify']
-        },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
