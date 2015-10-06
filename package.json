@@ -25,11 +25,13 @@
   "jspm": {
     "registry": "jspm",
     "format": "es6",
-    "main": "src/testlet",
+    "main": "testlet",
     "directories": {
       "lib": "src"
     },
-    "dependencies": {},
+    "dependencies": {
+      "fluxlet": "github:fluxlet/fluxlet@master"
+    },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
