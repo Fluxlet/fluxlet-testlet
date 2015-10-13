@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+- '4.1'
+
+env:
+  global:
+  - secure: D2z6DTlycwgMM06LKeafJz25zUDKft2rkt2I1yUsaIHolju629W9vWC+lN3hl57as0irlO263Dix9QvOBkkon9hz3ia/DFz3JUBndes/DgosHl+Z3PfPYfWnwkfjCFEYfUbBlNAsAQj4GZ8IK5xi42q2/oM/6gXS0Vap3ZnhhPtRVgtW9UJsv6x38pVHU/ojDqc3Fh+PPYL84nDxkSJkQxBEfh44CC1RORrRDdjUfAqxtoPaMm5xp50Ihmgd91qFV3QbbMyvYovwCeGRvIWxEbfVx8vPyJzxY7CiEzXXQY/n1symHFH0T1kwhpWdFoqYb/Rcie+ZCJy+jZoPo2EspDmFa7tl8u13BQ4QB5URx7nz6h6f/1I4oHtioDGO75TWx4VUcPtmJCqY7FWxLVruz11lvA+0vtYocoA7hxkeSGYkwimXUlzoPJiK6D2MJWzZi+PL3gmolLoORPXQlGm/DhJCQ2Csig/5Cx0SHbKWcqbwuOvh2gnb/yUXFSpQznJ2wfxMYFXEbAfChuWjX6x2q5s4fWeW0Y73Sb+p4OO6PeFIH3lanF4n/6e13YBncwidx951ziWnkF3ABfAYuv3EQOxQtMxglzt3kfrd6dfjtv8OkPHPgoXl2iA60g2GJqHqBvlXh+EofoVN0S3oLXrNEqCrLDHvn7QODtetO1ZZWFU=
+
+before_install:
+- npm install -g jspm
+- jspm --version
+- jspm config registries.github.auth $JSPM_GITHUB_AUTH_TOKEN
+- export DISPLAY=:99.0
+- "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile
+  --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
