@@ -22,7 +22,7 @@
 // *beforeEach*.
 //
 
-import fluxlet, { extend } from "fluxlet"
+import fluxlet from "fluxlet"
 
 // ## API
 //
@@ -264,14 +264,20 @@ function unavailableFn(fnName) {
 function fluxletSpy(type, name, fnOrCond) {
 
     function spy(fn, suffix) {
-        return fn ? createSpy(suffix ? `${type} ${name}.${suffix}` : `${type} ${name}`, fn) : undefined
+        return typeof fn === 'function'
+          ? createSpy(suffix ? `${type} ${name}.${suffix}` : `${type} ${name}`, fn)
+          : fn
     }
 
-    if (typeof fnOrCond === "object") {
-        return extend({}, fnOrCond, {
-            when: spy(fnOrCond.when, 'when'),
-            then: spy(fnOrCond.then, 'then')
-        })
+    function spyObj(cond) {
+      return Object.keys(cond).reduce((ret, key) => {
+        ret[key] = spy(cond[key], key)
+        return ret
+      }, {})
+    }
+
+    if (fnOrCond && typeof fnOrCond === "object") {
+        return spyObj(fnOrCond)
     } else {
         return spy(fnOrCond)
     }

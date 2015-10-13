@@ -6,8 +6,6 @@
   "dependencies": {},
   "devDependencies": {
     "babel": "^5.8.23",
-    "glob": "^5.0.14",
-    "groc": "^0.8.0",
     "jspm": "^0.16.8",
     "karma": "^0.13.10",
     "karma-chrome-launcher": "^0.2.0",
@@ -19,13 +17,13 @@
   },
   "scripts": {
     "prepublish": "babel -d lib src",
-    "pretest": "jspm install",
+    "pretest": "jspm install -y",
     "test": "karma start --single-run"
   },
   "jspm": {
     "registry": "jspm",
-    "format": "es6",
     "main": "testlet",
+    "format": "es6",
     "directories": {
       "lib": "src"
     },
